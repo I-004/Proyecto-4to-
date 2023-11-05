@@ -3,6 +3,7 @@ var path = require("path");
 var cors = require('cors');
 var app = express(); // Utiliza la variable 'app' aquí
 require("dotenv").config();
+const session=require('express-session');
 
 
 var usuariosRutas = require("./Routes/userRoutes");
