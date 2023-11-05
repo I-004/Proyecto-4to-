@@ -17,6 +17,12 @@ app.use('/Web', express.static(path.join(__dirname, 'Web')));
 app.use(cors());
 app.use("/", usuariosRutas, productosRutas, usuariosRutasApi, productosRutasApi);
 
+app.use(session({
+  secret:process.env.SESSION_SECRETO,
+  resave:true,
+  saveUninitialized:true
+}));
+
 var port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log("Servidor en http://localhost:" + port);
